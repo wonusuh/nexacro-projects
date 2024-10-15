@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Mobile_Main_Sub" width="480" height="680" titletext="New Form">
+    <Layouts>
+      <Layout height="680" mobileorientation="portrait" screenid="Phone_screen" width="480">
+        <Static id="Static00" taborder="0" left="0" top="0" cssclass="sta_WF_Main" right="0" bottom="0"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+    <Objects/>
+  </Form>
+</FDL>
