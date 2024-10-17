@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="Form_Emp_exe" left="0" top="0" width="800" height="600" titletext="New Form">
+  <Form id="Form_Emp_exe" left="0" top="0" width="800" height="600" titletext="New Form" onload="Form_Emp_exe_onload">
     <Layouts>
       <Layout height="600" width="800">
         <Static id="st_title" taborder="0" text="Employees" left="10" top="5" width="193" height="30" right="" bottom="" cssclass="sta_WF_FrmTitle"/>
@@ -186,126 +186,18 @@
           <Column id="MARRIED" type="STRING" size="10"/>
           <Column id="MEMO" type="STRING" size="10"/>
         </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="FULL_NAME">Olivia</Col>
-            <Col id="POS_CD">03</Col>
-            <Col id="HIRE_DATE">20101003</Col>
-            <Col id="SALARY">83000</Col>
-            <Col id="GENDER">W</Col>
-            <Col id="MARRIED">true</Col>
-            <Col id="MEMO">ivory</Col>
-            <Col id="DEPT_CD">01</Col>
-            <Col id="EMPL_ID">AA001</Col>
-          </Row>
-          <Row>
-            <Col id="FULL_NAME">John</Col>
-            <Col id="POS_CD">04</Col>
-            <Col id="HIRE_DATE">20051011</Col>
-            <Col id="SALARY">76000</Col>
-            <Col id="GENDER">M</Col>
-            <Col id="MARRIED">false</Col>
-            <Col id="MEMO">greenyellow</Col>
-            <Col id="DEPT_CD">02</Col>
-            <Col id="EMPL_ID">AA002</Col>
-          </Row>
-          <Row>
-            <Col id="FULL_NAME">Jackson</Col>
-            <Col id="POS_CD">03</Col>
-            <Col id="HIRE_DATE">20070206</Col>
-            <Col id="SALARY">95000</Col>
-            <Col id="GENDER">M</Col>
-            <Col id="MARRIED">true</Col>
-            <Col id="MEMO">aliceblue</Col>
-            <Col id="DEPT_CD">03</Col>
-            <Col id="EMPL_ID">BB001</Col>
-          </Row>
-          <Row>
-            <Col id="FULL_NAME">Maia</Col>
-            <Col id="POS_CD">02</Col>
-            <Col id="HIRE_DATE">20090512</Col>
-            <Col id="SALARY">60000</Col>
-            <Col id="GENDER">W</Col>
-            <Col id="MARRIED">false</Col>
-            <Col id="MEMO">ivory</Col>
-            <Col id="DEPT_CD">04</Col>
-            <Col id="EMPL_ID">BB002</Col>
-          </Row>
-          <Row>
-            <Col id="FULL_NAME">Adam</Col>
-            <Col id="POS_CD">04</Col>
-            <Col id="HIRE_DATE">20010109</Col>
-            <Col id="SALARY">88000</Col>
-            <Col id="GENDER">E</Col>
-            <Col id="MARRIED">true</Col>
-            <Col id="MEMO">greenyellow</Col>
-            <Col id="DEPT_CD">01</Col>
-            <Col id="EMPL_ID">CC001</Col>
-          </Row>
-          <Row>
-            <Col id="FULL_NAME">Ray</Col>
-            <Col id="POS_CD">03</Col>
-            <Col id="HIRE_DATE">20160202</Col>
-            <Col id="SALARY">60000</Col>
-            <Col id="GENDER">M</Col>
-            <Col id="MARRIED">true</Col>
-            <Col id="MEMO">lightpink</Col>
-            <Col id="DEPT_CD">02</Col>
-            <Col id="EMPL_ID">DD001</Col>
-          </Row>
-        </Rows>
       </Dataset>
       <Dataset id="ds_pos">
         <ColumnInfo>
           <Column id="POS_CD" type="string" size="32"/>
           <Column id="POS_NAME" type="string" size="32"/>
         </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="POS_CD">04</Col>
-            <Col id="POS_NAME">Officer</Col>
-          </Row>
-          <Row>
-            <Col id="POS_CD">03</Col>
-            <Col id="POS_NAME">Assistant Manager</Col>
-          </Row>
-          <Row>
-            <Col id="POS_CD">02</Col>
-            <Col id="POS_NAME">Division Manager</Col>
-          </Row>
-          <Row>
-            <Col id="POS_CD">01</Col>
-            <Col id="POS_NAME">Chairman</Col>
-          </Row>
-        </Rows>
       </Dataset>
       <Dataset id="ds_dept">
         <ColumnInfo>
           <Column id="DEPT_CD" type="STRING" size="32"/>
           <Column id="DEPT_NAME" type="STRING" size="32"/>
         </ColumnInfo>
-        <Rows>
-          <Row>
-            <Col id="DEPT_CD">01</Col>
-            <Col id="DEPT_NAME">Accounting Team</Col>
-          </Row>
-          <Row>
-            <Col id="DEPT_CD">02</Col>
-            <Col id="DEPT_NAME">HR Team</Col>
-          </Row>
-          <Row>
-            <Col id="DEPT_CD">03</Col>
-            <Col id="DEPT_NAME">Sales Team</Col>
-          </Row>
-          <Row>
-            <Col id="DEPT_CD">04</Col>
-            <Col id="DEPT_NAME">Design Team</Col>
-          </Row>
-          <Row>
-            <Col id="DEPT_CD">05</Col>
-            <Col id="DEPT_NAME">Education Team</Col>
-          </Row>
-        </Rows>
       </Dataset>
       <Dataset id="Dataset00">
         <ColumnInfo>
@@ -408,7 +300,7 @@ this.btn_retrieve_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo
 	);
 };
 
-this.fn_call = function(svcId, errorCode, errorMsg) { // 조회,저장등을 할 때 호출되는 콜백함수
+this.fn_call = function(svcId, errorCode, errorMsg) { // 조회, 저장 등을 할 때 호출되는 콜백함수
 	if(errorCode >= 0) {
 		if(svcId == "strSelect") {
 			alert(this.ds_emp.getRowCount() + "건 조회");
@@ -440,6 +332,19 @@ this.btn_save_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 		"", // 조회 client ds=server ds
 		"arg1=1 arg2=" + nexacro.wrapQuote("2 3"), // 같이 넘길 파라미터
 		"fn_call" // 문장의 끝을 알려주는 function
+	);
+};
+
+// 폼이 로드 되기전에 콤보박스(드롭다운) 또는 리스트박스 등의 컴포넌트에 보여줄 데이터를 DB에게 요청하는 함수입니다.
+// Properties -> Event -> onload 를 더블클릭하여 자동으로 생성된 함수입니다.
+this.Form_Emp_exe_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo) { 
+	this.transaction(
+		"strCode", // (서비스 id)
+		"SvcURL::select_code.jsp?arg1=1&arg2=2", // (서비스 url)
+		"", // (저장)
+		"ds_dept=out_dept ds_pos=out_pos", // (조회) " "을 구분자로 n개의 dataset을 요청할 수 있습니다.
+		"arg1=1 arg2=" + nexacro.wrapQuote("2 3"), // 같이 넘길 파라미터
+		"fn_call" // 코드성 데이터는 백단에서 데이터만 가져오면 되기때문에 별도의 콜백함수는 필요하지 않습니다.
 	);
 };
 ]]></Script>
