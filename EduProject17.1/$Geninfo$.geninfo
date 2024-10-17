@@ -25,7 +25,7 @@
       <File url="Application_Desktop.xadl" checksum="20241015164807" errormsg=""/>
       <File url="Application_Phone.xadl" checksum="20241015164807" errormsg=""/>
       <File url="Base\Hello.xfdl" checksum="20241015164811" errormsg=""/>
-      <File url="Base\Hello_Sample.xfdl" checksum="20241016112109" errormsg=""/>
+      <File url="Base\Hello_Sample.xfdl" checksum="20241016180220" errormsg=""/>
       <File url="FrameBase\LeftFrame.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="FrameBase\MainForm.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="FrameBase\MdiFrame.xfdl" checksum="20241015164811" errormsg=""/>
@@ -33,7 +33,7 @@
       <File url="FrameBase\WorkFrame.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="Form\Form_Emp.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="Form\Form_EmpMLM.xfdl" checksum="20241015164811" errormsg=""/>
-      <File url="Form\Form_Emp_Exe.xfdl" checksum="20241016175117" errormsg=""/>
+      <File url="Form\Form_Emp_Exe.xfdl" checksum="20241017133408" errormsg=""/>
       <File url="Form\Form_Emp_Sample.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="Form\Form_Organization.xfdl" checksum="20241015164811" errormsg=""/>
       <File url="Form\Form_Popup.xfdl" checksum="20241015164811" errormsg=""/>
@@ -98,6 +98,7 @@
       <File url="Mobile\Mobile_MLM.xfdl" checksum="20241015164812" errormsg=""/>
       <File url="Mobile\Mobile_Step.xfdl" checksum="20241015164812" errormsg=""/>
       <File url="Mobile\Mobile_Work.xfdl" checksum="20241015164812" errormsg=""/>
+      <File url="Base\resize01_wonuSuh.xfdl" checksum="20241017133612" errormsg=""/>
     </Info>
   </GenInfo>
 </root>
